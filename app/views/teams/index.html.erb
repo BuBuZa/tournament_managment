@@ -1,0 +1,14 @@
+<h1>Список команд</h1>
+<ul>
+  <% @teams.each do |team| %>
+    <li><%= team.name %></li>
+  <% end %>
+</ul>
+
+<%= form_tag generate_schedule_tournament_path, method: :post do %>
+  <% if @teams.count == 16 %>
+    <%= submit_tag 'Генерировать случайным образом в дивизионы' %>
+  <% end %>
+<% end %>
+
+<%= link_to 'Создать новую команду', new_team_path %>

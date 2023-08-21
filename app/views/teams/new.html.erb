@@ -1,0 +1,10 @@
+<h1>Ввод названий команд</h1>
+<%= form_for @team, url: teams_path, method: :post do |f| %>
+  <div>
+    <%= f.label :name, 'Название команды' %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.submit 'Создать' %>
+  </div>
+<% end %>

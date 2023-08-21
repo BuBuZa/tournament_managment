@@ -1,0 +1,14 @@
+<h1>Расписание турнира</h1>
+<%= form_tag generate_schedule_tournament_path, method: :post do %>
+  <%= submit_tag 'Генерировать результаты' %>
+<% end %>
+
+<h2>Результаты:</h2>
+<ul>
+  <% Match.all.each do |match| %>
+    <li>
+      <%= "#{match.home_team.name} (#{match.home_team.division}) #{match.home_team_score} : #{match.away_team_score} #{match.away_team.name} (#{match.away_team.division})" %>
+    </li>
+  <% end %>
+</ul>
+
